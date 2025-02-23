@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Spider Animation */
+@keyframes spiderWalk {
+  0% {
+    transform: translate(-100%, -100%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(100vw, 100vh);
+    opacity: 0;
+  }
+}
+
+.spider-animation {
+  animation: spiderWalk 8s linear forwards;
+  animation-delay: 5s;
+}
+
+/* Premium typography */
+@layer base {
+  h1 {
+    @apply text-4xl font-bold tracking-tight;
+  }
+  h2 {
+    @apply text-3xl font-semibold;
+  }
+  h3 {
+    @apply text-2xl font-medium;
+  }
+}
+
+/* Elite animations */
+@layer utilities {
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+}
+
+/* Security guidelines */
+.security-guidelines {
+  @apply bg-red-50 border-l-4 border-red-400 p-4;
+}
+.security-guidelines h4 {
+  @apply font-bold text-red-700 mb-2;
+}
+.security-guidelines ul {
+  @apply list-disc pl-5 text-red-600;
+}
+
+/* Premium components */
+.premium-card {
+  @apply bg-white rounded-xl shadow-lg;
+  @apply border border-gray-100;
+  @apply transform transition-all hover:scale-105;
+  @apply hover:shadow-xl;
+}
+
+/* Accessibility */
+.focus-visible {
+  @apply focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .premium-card {
+    @apply bg-gray-800 border-gray-700;
+  }
+}
